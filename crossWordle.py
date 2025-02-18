@@ -160,7 +160,7 @@ def crosswordDataLoop(crosswordData, change, screen=False, crosswordMultipliers=
 						won = False
 			if change:
 				if change[0] == k and change[1] == i:
-					print(f"Writing Over {crosswordData[i][k]} with {change[2]}")
+					#print(f"Writing Over {crosswordData[i][k]} with {change[2]}")
 					crosswordData[i][k] = change[2]
 	return crosswordData, won
 
@@ -364,7 +364,7 @@ def generateCrossword(crosswordDimensions, wordCount):
 		#baseword spawned
 		changesToAdd.append([basePosition[x] + i, basePosition[y], "-" + baseWord[i]])
 		possiblePositions.append([basePosition[x] + i, basePosition[y]])
-	print("Base Word: " + baseWord)
+	#print("Base Word: " + baseWord)
 	#blacklist the spots on each end of the base word
 	changesToAdd.append([basePosition[x] - 1, basePosition[y], "-/"])
 	changesToAdd.append([basePosition[x] + len(baseWord), basePosition[y], "-/"])
@@ -416,7 +416,7 @@ def generateCrossword(crosswordDimensions, wordCount):
 							#if every position is correct (the for loop has reached the end without breaking)
 							if k == (len(newWord) - 1):
 								#spawn the word vertically
-								print(newWord + " Spawned")
+								#print(newWord + " Spawned")
 								#set fails to 0
 								failCount = 0
 								for j in range(len(newWord)):
@@ -490,7 +490,7 @@ def generateCrossword(crosswordDimensions, wordCount):
 							#if every position is correct (the for loop has reached the end without breaking)
 							if k == (len(newWord) - 1):
 								#spawn the word vertically
-								print(newWord + " Spawned")
+								#print(newWord + " Spawned")
 								#set failCount to 0
 								failCount = 0
 								for j in range(len(newWord)):
@@ -831,7 +831,7 @@ while playing:
 		yellows = []
 		letterDict = generateLetterDict()
 		gameState = "wordle"
-		print(wordleHitbox[4])
+		#print(wordleHitbox[4])
 	if gameState == "wordle":
 		keyPresses, letterDict, greens, yellows, hasWon, guesses = wordleGame(screen, keyPresses, wordleHitbox, letterDict, greens, yellows, crosswordData, guesses)
 		drawGreens(screen, greens)
